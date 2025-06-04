@@ -53,10 +53,10 @@ RUN cd ~ && \
     cd dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 RUN apt-get -y install python3-pip
-RUN pip3 install -r requirements.txt
-RUN python3 -m nerd -d en_core_web_sm
+RUN pip install -r requirements.txt
+RUN python -m nerd -d en_core_web_sm
 
-RUN pip3 install -e .
+RUN pip install -e .
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /
