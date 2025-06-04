@@ -53,7 +53,7 @@ RUN cd ~ && \
     cd dlib/ && \
     python3 setup.py install --yes USE_AVX_INSTRUCTIONS
 RUN apt-get -y install python3-pip
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 RUN python -m nerd -d en_core_web_sm
 
 RUN pip install -e .
